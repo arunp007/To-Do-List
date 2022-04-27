@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body{
+            background-color: burlywood;
+            width: 100%;
+            background-position: relative;
+        }
+
+        .container{
+            background-color: black;
+            width: 700px;
+            margin-left:100px;
+            margin-top: 100px;  
+            border-radius: 20px; 
+        }
+
+        h1{
+            color: white;
+            font-size: 60px;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        form{
+            padding-left: 50px;
+            padding-bottom: 150px;
+        }
+
+        input[type=button]{
+            width: 100px;
+            height: 40px;
+            margin-top: 10px;
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            border: 2px solid grey;
+            font-size: larger;
+            font-weight: bolder;
+        }
+
+        input[type=text]{
+            width: 500px;
+            height: 30px;
+            border-radius: 10px;
+            border: 2px solid blue;
+        }
+
+        input[type=button]:hover{
+            background-color: red;
+            color: white;
+            border: 2px solid grey;
+        }
+
+        ul{
+            color: white;
+            font-size: 50px;
+        }
+       a{
+           color: white;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To Do List</h1>
+        <form>
+            <input type="text" id="input">
+            <input type="button" value="ADD" id="btn" onclick="display()">
+            <span id="error"></span>
+            <ul id="list"></ul>
+        </form>
+    </div>
+
+    <script>
+        function display(){
+            var input = document.getElementById('input')
+           
+            if(input.value == ""){
+                document.getElementById('error').innerHTML="Please Enter Your Task"
+                document.getElementById('input').style.borderColor="red"
+                document.getElementById('error').style.color="red"
+            }
+            else{
+                var li = document.createElement('li')  //to add item that enter on text box to li
+                li.textContent = input.value
+                list.appendChild(li,list)
+            }  
+        }
+    </script>
+</body>
+</html>
